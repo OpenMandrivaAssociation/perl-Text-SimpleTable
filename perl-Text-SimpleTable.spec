@@ -13,7 +13,6 @@ Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Text/%{module}-%{version}
 Url:		http://search.cpan.org/dist/%{module}
 BuildRequires:	perl-devel
 BuildRequires:  perl(Module::Build)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
 %description
