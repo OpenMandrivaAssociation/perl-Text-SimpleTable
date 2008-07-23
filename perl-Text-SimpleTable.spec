@@ -1,7 +1,7 @@
 %define	module	Text-SimpleTable
 %define	name	perl-%{module}
 %define version 0.03
-%define release %mkrel 3
+%define release %mkrel 5
 
 Summary:	Simple Eyecandy ASCII Tables
 Name:		%{name}
