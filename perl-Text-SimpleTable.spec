@@ -1,20 +1,18 @@
 %define	module	Text-SimpleTable
 %define	name	perl-%{module}
-%define version 0.03
-%define release %mkrel 5
+%define version 0.05
+%define release %mkrel 1
 
-Summary:	Simple Eyecandy ASCII Tables
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Summary:	Simple Eyecandy ASCII Tables
 License:	GPL or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Text/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-BuildRequires:	perl-devel
-BuildRequires:  perl(Module::Build)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Text/%{module}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Simple eyecandy ASCII tables, as seen in Catalyst.
@@ -23,15 +21,15 @@ Simple eyecandy ASCII tables, as seen in Catalyst.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Build.PL installdirs=vendor
-./Build
+%{__perl} Makefile.PL -n INSTALLDIRS=vendor
+%make
 
 %check
-./Build test
+make test
 
 %install
 %{__rm} -rf %{buildroot}
-./Build install destdir=%buildroot
+%makeinstall_std
 
 %clean
 %{__rm} -rf %{buildroot}
