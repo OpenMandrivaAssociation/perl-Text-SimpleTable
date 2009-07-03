@@ -1,16 +1,14 @@
-%define	module	Text-SimpleTable
-%define	name	perl-%{module}
-%define version 0.05
-%define release %mkrel 1
+%define upstream_name       Text-SimpleTable
+%define upstream_version    1.1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:	Simple Eyecandy ASCII Tables
 License:	GPL or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Text/%{module}-%{version}.tar.gz
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source:     http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -18,7 +16,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}
 Simple eyecandy ASCII tables, as seen in Catalyst.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL -n INSTALLDIRS=vendor
@@ -36,7 +34,7 @@ make test
 
 %files
 %defattr(-,root,root)
-%doc README Changes
+%doc Changes
 %{perl_vendorlib}/Text/*
 %{_mandir}/man3/*
 
