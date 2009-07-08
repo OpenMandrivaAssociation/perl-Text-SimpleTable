@@ -1,14 +1,16 @@
 %define upstream_name       Text-SimpleTable
-%define upstream_version    1.1
+%define upstream_version    1.2
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
 Release:    %mkrel 1
+
 Summary:	Simple Eyecandy ASCII Tables
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
