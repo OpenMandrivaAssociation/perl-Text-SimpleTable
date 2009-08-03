@@ -1,5 +1,5 @@
 %define upstream_name       Text-SimpleTable
-%define upstream_version    1.4
+%define upstream_version    1.8
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -12,7 +12,7 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Simple eyecandy ASCII tables, as seen in Catalyst.
@@ -39,4 +39,3 @@ make test
 %doc Changes
 %{perl_vendorlib}/Text/*
 %{_mandir}/man3/*
-
