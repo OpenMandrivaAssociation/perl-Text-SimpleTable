@@ -1,5 +1,5 @@
 %define upstream_name       Text-SimpleTable
-%define upstream_version    2.0
+%define upstream_version 2.01
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
