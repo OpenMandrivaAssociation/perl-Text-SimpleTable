@@ -1,15 +1,15 @@
 %define upstream_name       Text-SimpleTable
-%define upstream_version 2.03
+%define upstream_version 2.07
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    3
+Version:    %{upstream_version}
+Release:    1
 
 Summary:	Simple Eyecandy ASCII Tables
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://github.com/marcusramberg/text-simpletable
+Source0:    https://cpan.metacpan.org/authors/id/M/MR/MRAMBERG/Text-SimpleTable-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl-devel
